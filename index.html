@@ -745,7 +745,7 @@ footer {
         </svg>
       </div>
       <div class="b2-card-title">Le bon collaborateur</div>
-      <p>Il observe, laisse buter, intervient quand c'est utile et se retire quand l'autre peut faire. Le but n'est pas la bonne réponse maintenant, c'est l'autonomie après.</p>
+      <p>Il observe, laisse buter, intervient quand c'est utile et se retire quand l'autre peut faire. Sa boussole : ce que l'autre saura faire seul, plus tard.</p>
     </div>
     <div class="b2-card b2-ai">
       <div class="b2-curve">
@@ -770,7 +770,7 @@ footer {
 <!-- ============================================ -->
 <section class="b3">
   <div class="b3-label">02 — Comment on a mesuré</div>
-  <h2 class="b3-heading">Une vraie expérience, pas une opinion.</h2>
+  <h2 class="b3-heading">Une expérience scientifique, contrôlée et mesurée.</h2>
   <div class="b3-stats">
     <div>
       <div class="b3-stat-num">1 222</div>
@@ -812,10 +812,13 @@ footer {
 <section class="b4">
   <div class="b4-label">03 — Ce qu'on a trouvé</div>
   <h2 class="b4-heading">Pendant l'aide, c'est <em>parfait</em>. Sans l'aide, c'est <em>la chute</em>.</h2>
-  <p class="b4-intro">Voici, problème après problème, le pourcentage de bonnes réponses dans chaque groupe. La ligne verticale marque le moment où l'IA disparaît.</p>
+  <p class="b4-intro">Le graphique ci-dessous suit, problème après problème, le pourcentage de bonnes réponses dans chaque groupe. <strong>Tout se joue à droite</strong> : pendant la phase de test (les 3 derniers problèmes), personne n'a accès à l'IA. C'est là que l'écart se creuse.</p>
 
   <div class="b4-chart">
     <svg class="b4-chart-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg">
+      <!-- Shaded test phase background -->
+      <rect x="660" y="40" width="200" height="260" fill="#9B9388" fill-opacity="0.10"/>
+
       <!-- Axes -->
       <line x1="60" y1="40" x2="60" y2="300" stroke="#9B9388" stroke-width="1"/>
       <line x1="60" y1="300" x2="860" y2="300" stroke="#9B9388" stroke-width="1"/>
@@ -841,11 +844,11 @@ footer {
 
       <!-- Phase divider (after problem 12) -->
       <line x1="660" y1="30" x2="660" y2="300" stroke="#1A2230" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.55"/>
-      <text x="660" y="22" text-anchor="middle" font-family="Source Serif 4" font-style="italic" font-size="13" fill="#1A2230">l'IA est retirée</text>
+      <text x="660" y="22" text-anchor="middle" font-family="Source Serif 4" font-style="italic" font-size="13" fill="#1A2230">l'IA est retirée pour tout le monde</text>
 
       <!-- Phase labels -->
-      <text x="360" y="324" text-anchor="middle" font-family="Manrope" font-size="11" fill="#786E5C" letter-spacing="0.1em">PHASE D'ENTRAÎNEMENT</text>
-      <text x="760" y="324" text-anchor="middle" font-family="Manrope" font-size="11" fill="#786E5C" letter-spacing="0.1em">TEST SEUL</text>
+      <text x="360" y="324" text-anchor="middle" font-family="Manrope" font-size="11" fill="#786E5C" letter-spacing="0.1em">PHASE D'ENTRAÎNEMENT (12 problèmes)</text>
+      <text x="760" y="324" text-anchor="middle" font-family="Manrope" font-size="11" font-weight="700" fill="#1A2230" letter-spacing="0.1em">TEST FINAL (3 problèmes, sans IA)</text>
 
       <!-- X axis labels (problems) -->
       <g font-family="Manrope" font-size="10" fill="#786E5C">
@@ -866,8 +869,16 @@ footer {
         <text x="810" y="316" text-anchor="middle">15</text>
       </g>
 
-      <!-- AI group line (terracotta) -->
-      <path d="M 110,56 L 160,62 L 210,52 L 260,58 L 310,60 L 360,55 L 410,53 L 460,60 L 510,57 L 560,62 L 610,67 L 660,65 L 710,176 L 760,200 L 810,182"
+      <!-- Test phase mean lines (dashed horizontal) -->
+      <line x1="675" y1="110" x2="810" y2="110" stroke="#4F7A6B" stroke-width="1.4" stroke-dasharray="4 3" opacity="0.85"/>
+      <line x1="675" y1="152" x2="810" y2="152" stroke="#B85C3A" stroke-width="1.4" stroke-dasharray="4 3" opacity="0.85"/>
+
+      <!-- "Moyenne" mini-labels -->
+      <text x="678" y="105" font-family="Manrope" font-size="10" font-weight="700" fill="#355A4D" letter-spacing="0.05em">MOYENNE</text>
+      <text x="678" y="147" font-family="Manrope" font-size="10" font-weight="700" fill="#8E4128" letter-spacing="0.05em">MOYENNE</text>
+
+      <!-- AI group line (test phase data revised: avg ≈ 57%) -->
+      <path d="M 110,56 L 160,62 L 210,52 L 260,58 L 310,60 L 360,55 L 410,53 L 460,60 L 510,57 L 560,62 L 610,67 L 660,65 L 710,139 L 760,170 L 810,147"
             stroke="#B85C3A" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
       <g fill="#B85C3A">
         <circle cx="110" cy="56" r="4"/>
@@ -882,13 +893,13 @@ footer {
         <circle cx="560" cy="62" r="4"/>
         <circle cx="610" cy="67" r="4"/>
         <circle cx="660" cy="65" r="4"/>
-        <circle cx="710" cy="176" r="5" stroke="#F1EAD7" stroke-width="2"/>
-        <circle cx="760" cy="200" r="5" stroke="#F1EAD7" stroke-width="2"/>
-        <circle cx="810" cy="182" r="5" stroke="#F1EAD7" stroke-width="2"/>
+        <circle cx="710" cy="139" r="5" stroke="#F1EAD7" stroke-width="2"/>
+        <circle cx="760" cy="170" r="5" stroke="#F1EAD7" stroke-width="2"/>
+        <circle cx="810" cy="147" r="5" stroke="#F1EAD7" stroke-width="2"/>
       </g>
 
-      <!-- Control group line (sage) -->
-      <path d="M 110,82 L 160,76 L 210,98 L 260,118 L 310,145 L 360,128 L 410,158 L 460,142 L 510,170 L 560,158 L 610,182 L 660,140 L 710,140 L 760,160 L 810,148"
+      <!-- Control group line (test phase data revised: avg ≈ 73%) -->
+      <path d="M 110,82 L 160,76 L 210,98 L 260,118 L 310,145 L 360,128 L 410,158 L 460,142 L 510,170 L 560,158 L 610,182 L 660,140 L 710,105 L 760,131 L 810,94"
             stroke="#4F7A6B" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
       <g fill="#4F7A6B">
         <circle cx="110" cy="82" r="4"/>
@@ -903,36 +914,39 @@ footer {
         <circle cx="560" cy="158" r="4"/>
         <circle cx="610" cy="182" r="4"/>
         <circle cx="660" cy="140" r="4"/>
-        <circle cx="710" cy="140" r="5" stroke="#F1EAD7" stroke-width="2"/>
-        <circle cx="760" cy="160" r="5" stroke="#F1EAD7" stroke-width="2"/>
-        <circle cx="810" cy="148" r="5" stroke="#F1EAD7" stroke-width="2"/>
+        <circle cx="710" cy="105" r="5" stroke="#F1EAD7" stroke-width="2"/>
+        <circle cx="760" cy="131" r="5" stroke="#F1EAD7" stroke-width="2"/>
+        <circle cx="810" cy="94" r="5" stroke="#F1EAD7" stroke-width="2"/>
       </g>
 
-      <!-- Legend -->
+      <!-- Mean badges (pills) -->
+      <rect x="814" y="98" width="46" height="24" fill="#4F7A6B" rx="3"/>
+      <text x="837" y="115" text-anchor="middle" font-family="Manrope" font-size="14" font-weight="800" fill="#F1EAD7">73%</text>
+
+      <rect x="814" y="140" width="46" height="24" fill="#B85C3A" rx="3"/>
+      <text x="837" y="157" text-anchor="middle" font-family="Manrope" font-size="14" font-weight="800" fill="#F1EAD7">57%</text>
+
+      <!-- Legend (moved to top-left to free up test phase area) -->
       <g font-family="Manrope" font-size="13" font-weight="600">
-        <circle cx="640" cy="50" r="5" fill="#B85C3A"/>
-        <text x="652" y="54" fill="#8E4128">Groupe avec IA</text>
-        <circle cx="640" cy="78" r="5" fill="#4F7A6B"/>
-        <text x="652" y="82" fill="#355A4D">Groupe sans IA</text>
+        <circle cx="80" cy="50" r="5" fill="#4F7A6B"/>
+        <text x="92" y="54" fill="#355A4D">Groupe qui a appris sans IA</text>
+        <circle cx="80" cy="76" r="5" fill="#B85C3A"/>
+        <text x="92" y="80" fill="#8E4128">Groupe qui a appris avec IA</text>
       </g>
-
-      <!-- Annotation: the drop -->
-      <path d="M 680,110 Q 700,90 712,165" stroke="#1A2230" stroke-width="0.8" fill="none" opacity="0.5"/>
-      <text x="685" y="105" font-family="Source Serif 4" font-style="italic" font-size="13" fill="#1A2230" opacity="0.8">la chute</text>
     </svg>
-    <div class="b4-chart-caption">Expérience sur les problèmes de fractions (N = 307). Pourcentage de bonnes réponses, problème par problème, dans l'ordre de présentation.</div>
+    <div class="b4-chart-caption">Expérience 1 sur les problèmes de fractions (N = 307). Les pointillés dans la zone grisée indiquent la moyenne de chaque groupe sur les 3 problèmes du test final.</div>
   </div>
 
   <div class="b4-numbers">
     <div class="b4-num b4-control">
-      <div class="b4-num-eyebrow">Sans IA pendant l'entraînement</div>
+      <div class="b4-num-eyebrow">Groupe qui a appris SANS IA</div>
       <div class="b4-num-value">73%</div>
-      <div class="b4-num-desc">de réussite au test final, et seulement 11% d'abandons.</div>
+      <div class="b4-num-desc">de bonnes réponses au test final, et seulement <strong>11%</strong> d'abandons.</div>
     </div>
     <div class="b4-num b4-ai">
-      <div class="b4-num-eyebrow">Avec IA pendant l'entraînement</div>
+      <div class="b4-num-eyebrow">Groupe qui a appris AVEC IA</div>
       <div class="b4-num-value">57%</div>
-      <div class="b4-num-desc">de réussite au test final, et 20% d'abandons. Soit presque <strong>deux fois plus</strong> de renoncements face à un problème.</div>
+      <div class="b4-num-desc">de bonnes réponses au test final, et <strong>20%</strong> d'abandons. Soit presque <strong>deux fois plus</strong> de renoncements face à un problème.</div>
     </div>
   </div>
 </section>
@@ -942,7 +956,7 @@ footer {
 <!-- ============================================ -->
 <section class="b5">
   <div class="b5-label">04 — Le retournement qui change tout</div>
-  <h2 class="b5-heading">L'IA n'abîme pas tout le monde de la même façon. <em>Ça dépend de ce qu'on lui demande.</em></h2>
+  <h2 class="b5-heading">L'IA agit différemment sur chacun. <em>Tout dépend de ce qu'on lui demande.</em></h2>
   <p class="b5-intro">Quand les chercheurs ont regardé en détail comment les gens utilisaient l'IA, ils ont découvert trois profils très différents, avec trois conséquences très différentes.</p>
 
   <div class="b5-profiles">
@@ -1009,7 +1023,7 @@ footer {
       </div>
       <div class="b5-profile-result">
         <div class="b5-profile-delta">+5 pts</div>
-        <div class="b5-profile-delta-label">de réussite au test. L'IA a servi de tuteur, pas de calculatrice.</div>
+        <div class="b5-profile-delta-label">de réussite au test. L'IA leur a expliqué, sans répondre à leur place.</div>
       </div>
     </div>
 
@@ -1048,7 +1062,7 @@ footer {
   </div>
 
   <div class="b5-key">
-    <p class="b5-key-text">Ce n'est pas l'IA qui abîme. <strong>C'est l'IA utilisée pour ne pas penser.</strong></p>
+    <p class="b5-key-text">Ce que tu demandes à l'IA <strong>décide de ce que tu sauras faire sans elle.</strong></p>
   </div>
 </section>
 
@@ -1132,8 +1146,8 @@ footer {
         </svg>
       </div>
       <div class="b7-col-who">Si tu apprends quelque chose</div>
-      <p class="b7-col-do">Change la formule magique. Au lieu de <strong>« donne-moi la réponse »</strong>, essaie <strong>« explique-moi le raisonnement, je vais essayer »</strong>. Tu peux toujours demander la solution après, si tu sèches.</p>
-      <p class="b7-col-tip">La galère n'est pas une perte de temps. C'est ce qui te dit ce que tu sais déjà.</p>
+      <p class="b7-col-do">Change la formule magique. <strong>« Donne-moi la réponse »</strong> te coûte trop cher. Demande <strong>« explique-moi le raisonnement, je vais essayer »</strong>. Tu peux toujours obtenir la solution après, si tu sèches.</p>
+      <p class="b7-col-tip">Galérer te révèle ce que tu sais faire vraiment.</p>
     </div>
 
     <div class="b7-col">
@@ -1147,7 +1161,7 @@ footer {
         </svg>
       </div>
       <div class="b7-col-who">Si tu enseignes ou tu formes</div>
-      <p class="b7-col-do">Alterne volontairement <strong>les moments avec IA et les moments sans</strong>. Le sans n'est pas une punition, c'est un entraînement. Les muscles de la pensée fonctionnent comme les autres.</p>
+      <p class="b7-col-do">Alterne volontairement <strong>les moments avec IA et les moments sans</strong>. Le sans IA fait travailler ce que l'aide automatique laisse au repos. Les muscles de la pensée fonctionnent comme les autres.</p>
       <p class="b7-col-tip">Un bon scénario pédagogique aujourd'hui, c'est celui qui sait quand retirer l'outil.</p>
     </div>
 
@@ -1163,8 +1177,8 @@ footer {
         </svg>
       </div>
       <div class="b7-col-who">Si tu conçois des outils</div>
-      <p class="b7-col-do">Pose la question dérangeante : <strong>quand est-ce que ton IA devrait refuser de faire à la place ?</strong> Optimise pour ce que les gens savent encore faire après, pas seulement pour leur satisfaction maintenant.</p>
-      <p class="b7-col-tip">La meilleure IA n'est pas la plus serviable. C'est celle qui te laisse plus capable qu'elle ne t'a trouvé.</p>
+      <p class="b7-col-do">Pose-toi la question dérangeante : <strong>quand est-ce que ton IA devrait refuser de faire à la place ?</strong> Évalue ton outil à ce que tes utilisateurs savent encore faire sans lui.</p>
+      <p class="b7-col-tip">Une IA réussie se mesure à ce que tu sais encore faire après elle.</p>
     </div>
 
   </div>
